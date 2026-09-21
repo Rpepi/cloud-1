@@ -1,0 +1,5 @@
+duckdns_domain: "your-duckdns-subdomain"
+duckdns_token: "{{ vault_duckdns_token }}"
+mariadb_root_password: "{{ vault_mariadb_root_password }}"
+mariadb_password: "{{ vault_mariadb_password }}"
+email: "your-email@example.com"

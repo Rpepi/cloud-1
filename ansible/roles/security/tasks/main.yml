@@ -1,0 +1,5 @@
+- name: Configure sshd
+  ansible.builtin.import_tasks: sshd.yml
+
+- name: Configure ufw
+  ansible.builtin.import_tasks: ufw.yml

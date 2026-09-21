@@ -1,0 +1,18 @@
+# inventory/hosts.yml
+all:
+  hosts:
+    cloud1:
+      ansible_host: <VPS_PUBLIC_IP>
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: ~/.ssh/<your_key>.pem
+      ansible_python_interpreter: /usr/bin/python3.12
+      wordpress_domain: "<your-subdomain>.duckdns.org"
+      phpmyadmin_domain: "<your-subdomain>-pma.duckdns.org"
+
+    # cloud2:
+    #   ansible_host: <VPS_PUBLIC_IP>
+    #   ansible_user: ubuntu
+    #   ansible_ssh_private_key_file: ~/.ssh/<your_key>.pem
+    #   ansible_python_interpreter: /usr/bin/python3.12
+    #   wordpress_domain: "<your-subdomain-2>.duckdns.org"
+    #   phpmyadmin_domain: "<your-subdomain-2>-pma.duckdns.org"

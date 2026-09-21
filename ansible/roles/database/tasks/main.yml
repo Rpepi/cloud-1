@@ -1,0 +1,12 @@
+- name: Ensure mariadb config directory exists
+  ansible.builtin.file:
+    path: /opt/app/mariadb
+    state: directory
+    mode: "0755"
+
+
+- name: Deploy tuned MariaDB config
+  ansible.builtin.template:
+    src: my.cnf.j2
+    dest: /opt/app/mariadb/my.cnf
+    mode: "0664"

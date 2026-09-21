@@ -1,0 +1,4 @@
+wordpress_db_name: wordpress
+wordpress_db_user: wp_user
+mariadb_port: 3306
+mariadb_image: "mariadb:11.4"

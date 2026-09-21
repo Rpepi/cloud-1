@@ -1,0 +1,22 @@
+server {
+    listen 80; {# listen only on port 80 in the container, tls already terminated by traefik #}
+    server_name _; {# "_" is a joker , no filter needed , traefik send only the good request #}
+    root /var/www/html; {# location of wordpress data #} 
+    index index.php; {# default served file #}
+    
+    location / {
+        try_files $uri $uri/ /index.php?$args; {# try to serve the requested file or folder if not serve index.php with the query_string  #}
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass wordpress:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    } 
+
+    location ~ /\. { 
+        deny all;
+    }
+}
+

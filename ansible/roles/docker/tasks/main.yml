@@ -1,0 +1,5 @@
+- name: Install Docker
+  ansible.builtin.import_tasks: install_docker.yml
+
+- name: Add ubuntu to docker group
+  ansible.builtin.import_tasks: add_ubuntu_docker_group.yml

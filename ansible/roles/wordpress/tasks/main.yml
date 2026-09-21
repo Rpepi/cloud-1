@@ -1,0 +1,11 @@
+- name: Ensure nginx config directory exists
+  ansible.builtin.file:
+    path: /opt/app/nginx
+    state: directory
+    mode: "0755"
+
+- name: Deploy nginx config for WordPress
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: /opt/app/nginx/default.conf
+    mode: "0644"

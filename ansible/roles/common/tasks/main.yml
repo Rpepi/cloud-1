@@ -1,0 +1,14 @@
+- name: Fail if target OS is not Debian/Ubuntu family
+  ansible.builtin.assert:
+    that:
+      - ansible_facts['os_family'] == "Debian"
+    fail_msg: "This playbook is intended for Debian/Ubuntu, not {{ ansible_facts['distribution'] }}"
+
+- name: Update apt package cache
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Upgrade installed packages
+  ansible.builtin.apt:
+    upgrade: safe

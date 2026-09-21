@@ -1,0 +1,6 @@
+- name: Setting up DuckDNS cron job
+  ansible.builtin.cron:
+    name: "update DuckDNS IP"
+    minute: "*/5"
+    job: 'curl -s "https://www.duckdns.org/update?domains={{ wordpress_domain.split(".")[0] }},{{ phpmyadmin_domain.split(".")[0] }}&token={{ vault_duckdns_token }}&ip=" >/dev/null 2>&1'
+    state: present

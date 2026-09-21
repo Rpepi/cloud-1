@@ -1,0 +1,2 @@
+wordpress_image: "wordpress:7.1.0-php8.3-fpm-alpine"
+nginx_image: "nginx:1.31.2-alpine"

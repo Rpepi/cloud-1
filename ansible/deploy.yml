@@ -1,0 +1,13 @@
+- name: Deploy WordPress stack
+  hosts: all
+  become: true 
+  roles:
+    - common
+    - security
+    - docker
+    - duckdns
+    - database
+    - wordpress
+    - phpmyadmin
+    - proxy
+    - app
